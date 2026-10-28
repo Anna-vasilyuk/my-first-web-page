@@ -1,7 +1,6 @@
 body {
   background-color: #f5f5f7;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,23 +36,6 @@ body {
   font-size: 15px;
   line-height: 1.5;
 }
-.card .cheat-list {
-  text-align: left;
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-.card .cheat-list li {
-  background-color: #f5f5f7;
-  padding: 10px 15px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #333;
-}
-.card .cheat-list strong {
-  color: #0071e3;
-}
 .card button {
   background-color: #0071e3;
   color: white;
@@ -64,9 +46,7 @@ body {
   font-weight: 500;
   cursor: pointer;
   width: 100%;
-  transition:
-    background-color 0.2s ease,
-    transform 0.1s ease;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 .card button:hover {
   background-color: #0077ed;
@@ -92,4 +72,185 @@ body {
   color: #1b5e20;
   border: 2px solid #4caf50;
   margin-top: 25px;
-} /*# sourceMappingURL=style.css.map */
+}
+.card .tags-properties-docs {
+  text-align: left;
+  margin: 20px 0;
+}
+.card .tags-properties-docs .prop-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid #ff9500;
+  padding: 12px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10px;
+}
+.card .tags-properties-docs .prop-box code {
+  background-color: #eef2f7;
+  color: #d63384;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.card .tags-properties-docs .prop-box span {
+  display: block;
+  font-size: 13px;
+  color: #495057;
+  line-height: 1.4;
+}
+.card .tags-properties-docs .prop-box span b {
+  color: #1d1d1f;
+}
+.card .box-properties-docs {
+  text-align: left;
+  margin-top: 20px;
+}
+.card .box-properties-docs .prop-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid #4caf50;
+  padding: 12px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10px;
+}
+.card .box-properties-docs .prop-box code {
+  background-color: #eef2f7;
+  color: #d63384;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.card .box-properties-docs .prop-box span {
+  display: block;
+  font-size: 13px;
+  color: #495057;
+  line-height: 1.4;
+}
+.card .box-properties-docs .prop-box span b {
+  color: #1d1d1f;
+}
+.card .flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f7;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+.card .flex-item {
+  background-color: #0071e3;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 71, 227, 0.15);
+}
+.card .flex-properties-docs {
+  text-align: left;
+  margin-top: 20px;
+}
+.card .flex-properties-docs .prop-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0071e3;
+  padding: 12px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10px;
+}
+.card .flex-properties-docs .prop-box code {
+  background-color: #eef2f7;
+  color: #d63384;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.card .flex-properties-docs .prop-box span {
+  display: block;
+  font-size: 13px;
+  color: #495057;
+  line-height: 1.4;
+}
+.card .flex-properties-docs .prop-box span b {
+  color: #1d1d1f;
+}
+
+.position-container {
+  background-color: #f5f5f7;
+  height: 120px;
+  border-radius: 12px;
+  margin: 20px 0;
+  position: relative;
+  padding: 15px;
+  text-align: left;
+}
+
+.pos-box {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.relative-box {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border: 1px solid #1e88e5;
+}
+
+.absolute-box {
+  background-color: #fce4ec;
+  color: #880e4f;
+  border: 1px solid #ec407a;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  box-shadow: 0 4px 10px rgba(236, 64, 122, 0.2);
+}
+
+.position-properties-docs {
+  text-align: left;
+  margin-top: 20px;
+}
+.position-properties-docs .prop-box {
+  background-color: #f8f9fa;
+  border-left: 4px solid #9c27b0;
+  padding: 12px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10px;
+}
+.position-properties-docs .prop-box code {
+  background-color: #eef2f7;
+  color: #d63384;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 13px;
+  display: inline-block;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+.position-properties-docs .prop-box span {
+  display: block;
+  font-size: 13px;
+  color: #495057;
+  line-height: 1.4;
+}
+.position-properties-docs .prop-box span b {
+  color: #1d1d1f;
+}/*# sourceMappingURL=style.css.map */

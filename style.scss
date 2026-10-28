@@ -1,138 +1,315 @@
 // ==========================================
 // 1. НАШІ ЗМІННІ (Variables)
-// Тут ми створюємо «ярлики» для кольорів.
-// Зміниш колір тут — він зміниться по всьому сайту!
 // ==========================================
-$primary-color: #0071e3; // Фірмовий синій колір (як у Apple)
-$primary-hover: #0077ed; // Синій колір, коли ми наводимо мишку
-$bg-main: #f5f5f7; // Світло-сірий фон для всього сайту
-$text-dark: #1d1d1f; // Глибокий майже чорний колір для заголовків
-$text-gray: #86868b; // М'який сірий колір для звичайного тексту
+$primary-color: #0071e3; // Фірмовий синій колір
+$primary-hover: #0077ed; // Синій колір при наведенні
+$bg-main: #f5f5f7; // Світло-сірий фон сайту
+$text-dark: #1d1d1f; // Темний колір для заголовків
+$text-gray: #86868b; // Сірий колір для тексту
 
 // ==========================================
 // 2. СТИЛІ ДЛЯ ВСІЄЇ СТОРІНКИ (Тег body)
-// Керуємо головним контейнером, де лежать наші картки
 // ==========================================
 body {
-  background-color: $bg-main; // Фарбуємо фон у нашу сіру змінну
+  background-color: $bg-main;
   font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; // Сучасний гладкий шрифт
-  display: flex; // Вмикаємо технологію Flexbox, щоб керувати розташуванням карток
-  justify-content: center; // Вирівнюємо картки по центру горизонтально
-  align-items: center; // Вирівнюємо картки по центру вертикально
-  gap: 30px; // Створюємо порожню відстань у 30 пікселів МІЖ картками
-  flex-wrap: wrap; // Якщо екран малий (телефон), картки красиво перенесуться одна під одну
-  min-height: 100vh; // Розтягуємо сторінку на всю висоту екрана комп'ютера
-  margin: 0; // Обнуляємо стандартні рамки браузера навколо сайту
-  padding: 20px; // Додаємо невеликі внутрішні відступи від країв екрана
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
 }
 
 // ==========================================
-// 3. СУПЕР-ВКЛАДЕНІСТЬ SCSS (Nesting)
-// Ми відкриваємо дужки для .card ОДИН РАЗ,
-// а всі інші елементи ховаємо всередину!
+// 3. СТРУКТУРА КАРТОК (Вкладеність SCSS)
+// Всі стилі елементів ховаємо ВСЕРЕДИНУ .card { ... }
 // ==========================================
 .card {
-  background-color: white; // Сама картка буде чисто білою
-  padding: 30px; // Внутрішній відступ від тексту до білих країв картки
-  border-radius: 16px; // Гарні закруглені куточки
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); // М'яка, ледь помітна тінь під карткою
-  text-align: center; // Весь текст всередині картки рівняємо по центру
-  max-width: 350px; // Обмежуємо максимальну ширину картки, щоб вона не розповзалася
-  flex: 1 1 300px; // Дозволяємо карткам гнучко стискатися та розширюватися
+  background-color: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 350px;
+  flex: 1 1 300px;
 
-  // --- Заголовки h1 та h2 всередині картки ---
+  // Заголовки всередині .card
   h1,
   h2 {
-    color: $text-dark; // Фарбуємо в наш фірмовий темний колір
-    margin-bottom: 12px; // Відштовхуємо текст знизу від заголовка
+    color: $text-dark;
+    margin-bottom: 12px;
   }
   h1 {
     font-size: 24px;
-  } // Головний заголовок першої картки робимо більшим
+  }
   h2 {
     font-size: 20px;
-  } // Заголовок другої картки робимо трохи меншим
+  }
 
-  // --- Звичайні абзаци (текст <p>) всередині картки ---
+  // Абзаци тексту всередині .card
   p {
-    color: $text-gray; // Фарбуємо в м'який сірий колір з наших змінних
-    font-size: 15px; // Розмір шрифту
-    line-height: 1.5; // Відстань між рядками тексту, щоб він легше читався
+    color: $text-gray;
+    font-size: 15px;
+    line-height: 1.5;
   }
 
-  // --- Наш список-шпаргалка (.cheat-list) ---
-  .cheat-list {
-    text-align: left; // Сам список вирівнюємо по лівому краю
-    list-style: none; // Прибираємо стандартні круглі маркери списку
-    padding: 0; // Обнуляємо внутрішні відступи списку
-    margin: 20px 0; // Робимо відступи 20px зверху і знизу від всього списку
-
-    // Рядки списку <li> всередині .cheat-list
-    li {
-      background-color: $bg-main; // Робимо сіру плашку під кожен пункт списку
-      padding: 10px 15px; // Відступи всередині цієї плашки
-      border-radius: 8px; // Закруглюємо куточки кожної плашки
-      margin-bottom: 8px; // Робимо відстань між сусідніми пунктами списку
-      font-size: 14px; // Розмір тексту плашки
-      color: #333; // Темно-сірий колір тексту
-    }
-
-    // Жирний текст <strong> всередині списку
-    strong {
-      color: $primary-color; // Підсвічуємо назви тегів синім кольором
-    }
-  }
-
-  // --- Кнопка (<button>) всередині картки ---
+  // Наша інтерактивна кнопка
   button {
-    background-color: $primary-color; // Фарбуємо кнопку в синій колір зі змінних
-    color: white; // Текст на кнопці буде білим
-    border: none; // Прибираємо стандартну чорну рамку кнопки
-    padding: 12px 24px; // Внутрішні відступи кнопки (робимо її пухкою)
-    border-radius: 20px; // Закруглені краї кнопки
-    font-size: 15px; // Розмір тексту кнопки
-    font-weight: 500; // Робимо текст кнопки трохи жирнішим
-    cursor: pointer; // Змінюємо курсор на «пальчик» при наведенні
-    width: 100%; // Розтягуємо кнопку на всю ширину картки
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
     transition:
       background-color 0.2s ease,
-      transform 0.1s ease; // Робимо всі анімації плавними
+      transform 0.1s ease;
 
-    // Амперсанд '&' — це магія SCSS. Він заміняє собою слово 'button'
-    // &:hover означає button:hover (коли мишка наведена на кнопку)
     &:hover {
-      background-color: $primary-hover; // Змінюємо колір на світліший синій
-      transform: scale(1.02); // Злегка збільшуємо кнопку (ефект дихання)
+      background-color: $primary-hover;
+      transform: scale(1.02);
     }
 
-    // &:active означає button:active (в момент самого кліку мишкою)
     &:active {
-      transform: scale(0.98); // Кнопка трохи зменшується (ефект натискання)
+      transform: scale(0.98);
     }
   }
 
-  // --- Демонстраційні блоки для відступів (.box-demo) ---
+  // Демонстраційні кубики для відступів (друга картка)
   .box-demo {
-    font-size: 13px; // Розмір тексту в кубиках
-    font-weight: bold; // Робимо текст жирним
-    border-radius: 8px; // Закруглюємо кубики
-    margin-bottom: 15px; // Відступ знизу
-    padding: 15px; // Внутрішній відступ (Padding)
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
 
-    // Кубик для демонстрації Padding
     &.padding-demo {
-      background-color: #e3f2fd; // Ніжно-блакитний фон
-      color: #0d47a1; // Синій текст
-      border: 2px dashed #1e88e5; // Пунктирна рамка, яка показує «межу»
+      background-color: #e3f2fd;
+      color: #0d47a1;
+      border: 2px dashed #1e88e5;
     }
 
-    // Кубик для демонстрації Margin
     &.margin-demo {
-      background-color: #e8f5e9; // Ніжно-зелений фон
-      color: #1b5e20; // Зелений текст
-      border: 2px solid #4caf50; // Суцільна зелена рамка
-      margin-top: 25px; // Зовнішній відступ (Margin) — відштовхує зелений кубик від блакитного!
+      background-color: #e8f5e9;
+      color: #1b5e20;
+      border: 2px solid #4caf50;
+      margin-top: 25px;
+    }
+  }
+
+  // Новий розширений довідник тегів (перша картка)
+  .tags-properties-docs {
+    text-align: left;
+    margin: 20px 0;
+
+    .prop-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #ff9500; // Помаранчева смужка
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 10px;
+
+      code {
+        background-color: #eef2f7;
+        color: #d63384;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 13px;
+        display: inline-block;
+        margin-bottom: 4px;
+        font-weight: bold;
+      }
+
+      span {
+        display: block;
+        font-size: 13px;
+        color: #495057;
+        line-height: 1.4;
+
+        b {
+          color: $text-dark;
+        }
+      }
+    }
+  }
+
+  // Стилізуємо блок документації для відступів (друга картка)
+  .box-properties-docs {
+    text-align: left;
+    margin-top: 20px;
+
+    .prop-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #4caf50; // Зелена смужка
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 10px;
+
+      code {
+        background-color: #eef2f7;
+        color: #d63384;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 13px;
+        display: inline-block;
+        margin-bottom: 4px;
+        font-weight: bold;
+      }
+
+      span {
+        display: block;
+        font-size: 13px;
+        color: #495057;
+        line-height: 1.4;
+
+        b {
+          color: $text-dark;
+        }
+      }
+    }
+  }
+
+  // Демонстраційний контейнер Flexbox (третя картка)
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $bg-main;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+  }
+
+  .flex-item {
+    background-color: $primary-color;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 71, 227, 0.15);
+  }
+
+  // Блок документації всередині Flexbox (третя картка)
+  .flex-properties-docs {
+    text-align: left;
+    margin-top: 20px;
+
+    .prop-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid $primary-color; // Синя смужка
+      padding: 12px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 10px;
+
+      code {
+        background-color: #eef2f7;
+        color: #d63384;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 13px;
+        display: inline-block;
+        margin-bottom: 4px;
+        font-weight: bold;
+      }
+
+      span {
+        display: block;
+        font-size: 13px;
+        color: #495057;
+        line-height: 1.4;
+
+        b {
+          color: $text-dark;
+        }
+      }
+    }
+  }
+} // <--- ОЦЯ велика фігурне дужка тепер закриває .card у самому кінці!
+// Контейнер для демонстрації позиціонування (четверта картка)
+.position-container {
+  background-color: $bg-main;
+  height: 120px;
+  border-radius: 12px;
+  margin: 20px 0;
+  position: relative; // Обов'язково робимо батька relative!
+  padding: 15px;
+  text-align: left;
+}
+
+.pos-box {
+  font-size: 11px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+// Блакитний блок, який просто стоїть у потоці
+.relative-box {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border: 1px solid #1e88e5;
+}
+
+// Рожевий блок, який літає поверх всього контейнера в правий нижній кут!
+.absolute-box {
+  background-color: #fce4ec;
+  color: #880e4f;
+  border: 1px solid #ec407a;
+  position: absolute; // Магія польоту
+  bottom: 15px; // Притискаємо до низу батьківського контейнера
+  right: 15px; // Притискаємо до правого краю батьківського контейнера
+  box-shadow: 0 4px 10px rgba(236, 64, 122, 0.2);
+}
+
+// Документація для четвертої картки
+.position-properties-docs {
+  text-align: left;
+  margin-top: 20px;
+
+  .prop-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #9c27b0; // Красива фіолетова смужка ліворуч
+    padding: 12px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 10px;
+
+    code {
+      background-color: #eef2f7;
+      color: #d63384;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 13px;
+      display: inline-block;
+      margin-bottom: 4px;
+      font-weight: bold;
+    }
+
+    span {
+      display: block;
+      font-size: 13px;
+      color: #495057;
+      line-height: 1.4;
+
+      b {
+        color: $text-dark;
+      }
     }
   }
 }

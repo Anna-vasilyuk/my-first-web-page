@@ -7,28 +7,163 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="card">
-      <h1>📝 Моя Шпаргалка</h1>
-      <p>Теги, які я вже знаю і використовую:</p>
+    <div class="card tags-card">
+      <h1>📝 Базові теги HTML</h1>
+      <p>Фундамент будь-якої сторінки. Структура та зв'язок файлів:</p>
 
-      <ul class="cheat-list">
-        <li><strong>&lt;h1&gt;</strong> — головний заголовок</li>
-        <li><strong>&lt;p&gt;</strong> — звичайний текст (абзац)</li>
-        <li><strong>&lt;div&gt;</strong> — блок-контейнер для всього</li>
-        <li><strong>&lt;button&gt;</strong> — кнопка</li>
-        <li><strong>&lt;style&gt;</strong> — тег для написання CSS</li>
-        <li><strong>&lt;link&gt;</strong> — підключення зовнішнього CSS</li>
-        <li><strong>class=""</strong> — ім'я (паспорт) елемента для стилів</li>
-      </ul>
+      <!-- Довідник з тегами -->
+      <div class="tags-properties-docs">
+        <div class="prop-box">
+          <code>&lt;div&gt;</code>
+          <span
+            >Універсальний блок-контейнер. Об'єднує елементи (як наші
+            картки).</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>&lt;h1&gt; ... &lt;h6&gt;</code>
+          <span
+            >Заголовки різних рівнів. <b>h1</b> — найбільший і найголовніший на
+            сторінці.</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>&lt;p&gt;</code>
+          <span
+            >Звичайний текст (абзац). Має вбудовані відступи зверху та
+            знизу.</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>&lt;link href="..."&gt;</code>
+          <span
+            >Підключає зовнішні файли (наприклад, наш файл зі стилями
+            <b>style.css</b>).</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>class="назва"</code>
+          <span
+            >Атрибут-паспорт елемента. Дозволяє дати назву блоку, щоб
+            стилізувати його в CSS.</span
+          >
+        </div>
+      </div>
 
       <button>Додати новий тег</button>
     </div>
-    <div class="card box-model-card">
-      <h2>📦 Головний секрет CSS: Відступи</h2>
-      <p>Кожен елемент — це коробка. Керуй її простором:</p>
 
+    <div class="card box-model-card">
+      <h2>📦 Блочна модель: Відступи та Рамки</h2>
+      <p>Кожен елемент — це коробка (Box Model). Керуй її простором:</p>
+
+      <!-- Демонстраційна зона -->
       <div class="box-demo padding-demo">Внутрішній відступ (Padding)</div>
       <div class="box-demo margin-demo">Зовнішній відступ (Margin)</div>
+
+      <!-- Новий довідник з властивостями відступів -->
+      <div class="box-properties-docs">
+        <div class="prop-box">
+          <code>padding: 15px;</code>
+          <span
+            >Внутрішній відступ. Створює повітря <b>всередині</b> елемента (від
+            тексту до рамки).</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>margin-top: 25px;</code>
+          <span
+            >Зовнішній відступ. Відштовхує інші елементи
+            <b>зовні</b> (наприклад, зелений кубик від блакитного).</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>border: 2px solid;</code>
+          <span
+            >Рамка елемента. Має товщину, стиль (solid — суцільна, dashed —
+            пунктир) та колір.</span
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="card flex-card">
+      <h2>📐 Шпаргалка з Flexbox (Повний гід)</h2>
+      <p>Головний інструмент для створення сіток і вирівнювання.</p>
+
+      <!-- Демонстраційна зона -->
+      <div class="flex-container">
+        <div class="flex-item">A</div>
+        <div class="flex-item">B</div>
+        <div class="flex-item">C</div>
+      </div>
+
+      <!-- Довідник з властивостями прямо в картці -->
+      <div class="flex-properties-docs">
+        <div class="prop-box">
+          <code>display: flex;</code>
+          <span>Вмикає режим флексів (елементи стають у рядок).</span>
+        </div>
+
+        <div class="prop-box">
+          <code>justify-content:</code>
+          <span
+            >Керує горизонталлю: <b>center</b> (центр), <b>space-between</b> (по
+            краях).</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>flex-direction:</code>
+          <span
+            >Напрямок: <b>row</b> (рядок), <b>column</b> (перетворює на
+            стовпчик).</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="card position-card">
+      <h2>📍 Позиціонування: position</h2>
+      <p>Властивість, яка дозволяє рухати елементи по всьому екрану:</p>
+
+      <!-- Демонстраційна зона -->
+      <div class="position-container">
+        <div class="pos-box relative-box">Relative</div>
+        <div class="pos-box absolute-box">Absolute</div>
+      </div>
+
+      <!-- Довідник з властивостями позиціонування -->
+      <div class="position-properties-docs">
+        <div class="prop-box">
+          <code>position: relative;</code>
+          <span
+            >Залишає елемент на місці, але дозволяє рухати його відносно самого
+            себе через <b>top</b> чи <b>left</b>.</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>position: absolute;</code>
+          <span
+            >Вириває елемент з потоку. Він «літає» і позиціонується відносно
+            найближчого батька з <b>relative</b>.</span
+          >
+        </div>
+
+        <div class="prop-box">
+          <code>position: fixed;</code>
+          <span
+            >Прибиває елемент до екрана намертво (як плаваючі кнопки підтримки).
+            Він не рухається навіть при скролі!</span
+          >
+        </div>
+      </div>
     </div>
   </body>
 </html>
