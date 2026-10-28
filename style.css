@@ -1,0 +1,36 @@
+body {
+  background-color: #f5f5f7;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  max-width: 350px;
+}
+.cheat-list {
+  text-align: left; /* Вирівнюємо текст по лівому краю */
+  list-style: none; /* Прибираємо стандартні чорні крапки */
+  padding: 0; /* Прибираємо зайві відступи */
+  margin: 20px 0;
+}
+
+.cheat-list li {
+  background-color: #f5f5f7; /* Робимо сірий фон для кожного рядка */
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 8px; /* Відступ між рядками шпаргалки */
+  font-size: 14px;
+  color: #333;
+}
+
+.cheat-list strong {
+  color: #0071e3; /* Підсвічуємо самі теги синім кольором */
+}
