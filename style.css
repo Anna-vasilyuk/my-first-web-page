@@ -1,12 +1,17 @@
 body {
   background-color: #f5f5f7;
-  font-family: sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  gap: 30px;
+  flex-wrap: wrap;
+  min-height: 100vh;
   margin: 0;
+  padding: 20px;
 }
+
 .card {
   background-color: white;
   padding: 30px;
@@ -14,23 +19,77 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   text-align: center;
   max-width: 350px;
+  flex: 1 1 300px;
 }
-.cheat-list {
-  text-align: left; /* Вирівнюємо текст по лівому краю */
-  list-style: none; /* Прибираємо стандартні чорні крапки */
-  padding: 0; /* Прибираємо зайві відступи */
+.card h1,
+.card h2 {
+  color: #1d1d1f;
+  margin-bottom: 12px;
+}
+.card h1 {
+  font-size: 24px;
+}
+.card h2 {
+  font-size: 20px;
+}
+.card p {
+  color: #86868b;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.card .cheat-list {
+  text-align: left;
+  list-style: none;
+  padding: 0;
   margin: 20px 0;
 }
-
-.cheat-list li {
-  background-color: #f5f5f7; /* Робимо сірий фон для кожного рядка */
+.card .cheat-list li {
+  background-color: #f5f5f7;
   padding: 10px 15px;
   border-radius: 8px;
-  margin-bottom: 8px; /* Відступ між рядками шпаргалки */
+  margin-bottom: 8px;
   font-size: 14px;
   color: #333;
 }
-
-.cheat-list strong {
-  color: #0071e3; /* Підсвічуємо самі теги синім кольором */
+.card .cheat-list strong {
+  color: #0071e3;
 }
+.card button {
+  background-color: #0071e3;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+.card button:hover {
+  background-color: #0077ed;
+  transform: scale(1.02);
+}
+.card button:active {
+  transform: scale(0.98);
+}
+.card .box-demo {
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+.card .box-demo.padding-demo {
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  border: 2px dashed #1e88e5;
+}
+.card .box-demo.margin-demo {
+  background-color: #e8f5e9;
+  color: #1b5e20;
+  border: 2px solid #4caf50;
+  margin-top: 25px;
+} /*# sourceMappingURL=style.css.map */
